@@ -99,6 +99,9 @@ gap: 30px;
 @media (max-width:767px){
     .main-container{
         width: 70%;
+        input{
+            margin: 10px auto;
+        }
     }
     .alert{
         width: 100%;
@@ -107,6 +110,9 @@ gap: 30px;
 @media (max-width:991px){
     .main-container{
         width: 90%;
+    }
+    input{
+        margin:10px auto;
     }
 
 }

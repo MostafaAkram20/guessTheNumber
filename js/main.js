@@ -15,32 +15,31 @@ function red(){
     btn.classList.replace('btn-success' , 'btn-danger')
     score--;
 }
-btn.addEventListener('click', function go() {
-    ()=>{
-        if(inputNumber.value.trim() != ""){
-            let userGuess = Number(inputNumber.value); // convert input to number
-        let difference = Math.abs(userGuess - choosenNum); // absolute difference
-        if (userGuess === choosenNum) {
-            gradeDiv.innerHTML = `<h5 style="color: green;">Success !! ..</h5>`;
-            green();
-        } else if (difference > choosenNum * 0.5) {
-            gradeDiv.innerHTML = `<h5 style="color: #dc3545;">${userGuess < choosenNum ? 'Too low ..' : 'Too high ..'}</h5>`;
-            red();
-        } else if (difference > choosenNum * 0.3) {
-            gradeDiv.innerHTML = `<h5 style="color: #dc3545;">${userGuess < choosenNum ? 'Low ..' : 'High ..'}</h5>`;
-            red();
-        } else {
-            gradeDiv.innerHTML = `<h5 style="color: #dc3545;">So close ..</h5>`;
-            red();
-        }
-        scoreDiv.innerHTML = `<h5>Score: ${score} </h5>`;
-        if(score == 10){
-            console.log(choosenNum);
-            let alert = $('.alert');
-            alert.animate({opacity:'1'} , 1000);
-        }
-        }
-        inputNumber.value = '';
+btn.addEventListener('click', () => {
+    if(inputNumber.value.trim() != ""){
+        let userGuess = Number(inputNumber.value); // convert input to number
+    let difference = Math.abs(userGuess - choosenNum); // absolute difference
+
+    if (userGuess === choosenNum) {
+        gradeDiv.innerHTML = `<h5 style="color: green;">Success !! ..</h5>`;
+        green();
+    } else if (difference > choosenNum * 0.5) {
+        gradeDiv.innerHTML = `<h5 style="color: red;">${userGuess < choosenNum ? 'Too low ..' : 'Too high ..'}</h5>`;
+        red();
+    } else if (difference > choosenNum * 0.3) {
+        gradeDiv.innerHTML = `<h5 style="color: red;">${userGuess < choosenNum ? 'Low ..' : 'High ..'}</h5>`;
+        red();
+    } else {
+        gradeDiv.innerHTML = `<h5 style="color: red;">So close ..</h5>`;
+        red();
     }
+    scoreDiv.innerHTML = `<h5>Score: ${score} </h5>`;
+    if(score == 10){
+        console.log(choosenNum);
+        let alert = $('.alert');
+        alert.animate({opacity:'1'} , 1000);
+    }
+    }
+    inputNumber.value = ''
 });
 
