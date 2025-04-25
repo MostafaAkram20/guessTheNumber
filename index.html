@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Guess the number</title>
+</head>
+
+
+<body class="bg-dark">
+    <nav>
+        <div class="container">
+            
+            <div class="Highscore">
+                <h5>Highscore: 0</h5>
+            </div>
+            <div class="score">
+                <h5> Score: 20 </h5>
+            </div>
+            <div class="grade" >
+                <h5 style="color: black;">Your Grade ..</h5>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="main-container bg-light">
+            <h3>Guess a Number <br> <span>(between 1 and 50)</span></h3>
+            <input class="form-control w-50 " type="number" placeholder="Guess the Number ..." id="numberInput">
+            <button class="btn btn-dark">Check</button>
+        </div>
+    </div>
+    <div class="alert">
+        <div class="container">
+            <div class="alert alert-primary" role="alert">
+                The answer has been printed in the console. Open DevTools (F12) to see it.
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+
+</html>
