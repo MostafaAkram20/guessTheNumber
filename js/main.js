@@ -9,6 +9,7 @@ function green(){
     btn.classList.replace('btn-dark' , 'btn-success')
     btn.classList.replace('btn-danger' , 'btn-success')
     highScoreDiv.innerHTML = `<h5>Highscore: ${score}</h5>`
+    
 }
 function red(){
     btn.classList.replace('btn-dark' , 'btn-danger')
@@ -23,6 +24,7 @@ btn.addEventListener('click', () => {
     if (userGuess === choosenNum) {
         gradeDiv.innerHTML = `<h5 style="color: green;">Success !! ..</h5>`;
         green();
+        endGame();
     } else if (difference > choosenNum * 0.5) {
         gradeDiv.innerHTML = `<h5 style="color: red;">${userGuess < choosenNum ? 'Too low ..' : 'Too high ..'}</h5>`;
         red();
@@ -40,6 +42,17 @@ btn.addEventListener('click', () => {
         alert.animate({opacity:'1'} , 1000);
     }
     }
+    if(score == 0)
+    {
+        highScoreDiv.innerHTML = `<h5 style=" color:red;">You have lost !!</h5>`
+        endGame();
+    }
     inputNumber.value = ''
 });
 
+function endGame (){
+    btn.innerHTML = `Play again..`
+    btn.addEventListener('click' , ()=>{
+        location.reload();
+    })
+}
